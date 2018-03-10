@@ -24,21 +24,31 @@ public class PersistenceService {
         })
     }
 
-    public func saveModels() {
+    public func saveModels(_ models: [SquareModel]) {
         guard let client = DropboxClientsManager.authorizedClient else {
             return
         }
-        let fileData = "testing data example".data(using: String.Encoding.utf8, allowLossyConversion: false)!
-        client.files.upload(path: "/testData", input: fileData)
-            .response { response, error in
-                if let response = response {
-                    print(response)
-                } else if let error = error {
-                    print(error)
+
+        let modelDicts = models.map { $0.toDict }
+        do {
+            print(modelDicts)
+           let jsonData = try JSONSerialization.data(withJSONObject: modelDicts, options: .prettyPrinted)
+            client.files.upload(path: "/squares.json", input: jsonData)
+                .response { response, error in
+                    if let response = response {
+                        print(response)
+                    } else if let error = error {
+                        print(error)
+                    }
                 }
+                .progress { progressData in
+                    print(progressData)
             }
-            .progress { progressData in
-                print(progressData)
+            let jsonString = String(data: jsonData, encoding: String.Encoding.utf8)
+            print(jsonString)
+            print("json: \(jsonData)")
+        } catch {
+            print("error")
         }
     }
 

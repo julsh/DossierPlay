@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             switch authResult {
             case .success:
                 if let mainVC = app.keyWindow?.rootViewController as? ViewController {
-                    mainVC.save(sender: self)
+                    mainVC.save()
                 }
                 print("Success! User is logged into Dropbox.")
             case .cancel:

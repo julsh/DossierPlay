@@ -45,6 +45,7 @@ class ViewController: UIViewController {
         }
         if gesture.scale > 2.0 {
             print("saving..")
+            save()
             pinchDidTriggerSaveOrLoad = true
         } else if gesture.scale < 0.5 {
             print("loading..")
@@ -102,9 +103,9 @@ class ViewController: UIViewController {
         square.frame = frame
     }
 
-    func save(sender: AnyObject) {
+    func save() {
         if persistenceService.isAuthorized {
-            persistenceService.saveModels()
+            persistenceService.saveModels(squareModels)
         } else {
             persistenceService.authorize(from: self)
         }
