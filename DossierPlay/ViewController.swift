@@ -7,49 +7,15 @@
 //
 
 import UIKit
-
-class SquareModel: NSObject {
-
-    let squareSize = CGSize(width: 200, height: 200)
-
-    var square: UIView
-    var pickupOrigin: CGPoint?
-    var color: UIColor
-
-    init(color: UIColor, location: CGPoint) {
-        let square = UIView(frame: CGRect(origin: location, size: squareSize))
-        square.backgroundColor = color
-        square.layer.borderColor = UIColor.black.cgColor
-        square.layer.borderWidth = 2.0
-        self.square = square
-        self.color = color
-    }
-}
-
-extension UIView {
-
-    func brighten() {
-        guard let backgroundColor = backgroundColor else {
-            return
-        }
-        var red: CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue: CGFloat = 0.0
-        var alpha: CGFloat = 0.0
-        backgroundColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        let newColor = UIColor(red: min(red + 0.4, 1.0),
-                               green: min(green + 0.4, 1.0),
-                               blue: min(blue + 0.4, 1.0),
-                               alpha: alpha)
-        self.backgroundColor = newColor
-    }
-
-}
+import SwiftyDropbox
 
 class ViewController: UIViewController {
 
+    var pinchDidTriggerSaveOrLoad: Bool = false
+
     @IBOutlet var gridView: GridView!
     var squareModels: [SquareModel] = []
+    let persistenceService = PersistenceService()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +31,24 @@ class ViewController: UIViewController {
             let longPress = TouchTypeAwareLongPressGestureRecognizer(target: self, action: #selector(didTap(gesture:)))
             longPress.minimumPressDuration = 0.05
             square.addGestureRecognizer(longPress)
+        }
+
+        view.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(didPinch(gesture:))))
+    }
+
+    @objc func didPinch(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .began {
+            pinchDidTriggerSaveOrLoad = false
+        }
+        guard pinchDidTriggerSaveOrLoad == false else {
+            return
+        }
+        if gesture.scale > 2.0 {
+            print("saving..")
+            pinchDidTriggerSaveOrLoad = true
+        } else if gesture.scale < 0.5 {
+            print("loading..")
+            pinchDidTriggerSaveOrLoad = true
         }
     }
 
@@ -116,6 +100,14 @@ class ViewController: UIViewController {
                                    y: rowIndex * gridView.gridSize.height)
         frame.origin = snapLocation
         square.frame = frame
+    }
+
+    func save(sender: AnyObject) {
+        if persistenceService.isAuthorized {
+            persistenceService.saveModels()
+        } else {
+            persistenceService.authorize(from: self)
+        }
     }
 
 }

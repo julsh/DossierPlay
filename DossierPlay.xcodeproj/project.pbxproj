@@ -14,6 +14,9 @@
 		7CE39F6420542C07006C4EA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE39F6220542C07006C4EA3 /* LaunchScreen.storyboard */; };
 		7CE39F6C20544237006C4EA3 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F6B20544237006C4EA3 /* GridView.swift */; };
 		7CE39F6E20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */; };
+		7CE39F7020545B75006C4EA3 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F6F20545B75006C4EA3 /* PersistenceService.swift */; };
+		7CE39F7220546023006C4EA3 /* SquareModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F7120546023006C4EA3 /* SquareModel.swift */; };
+		7CE39F7420546057006C4EA3 /* UIView+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F7320546057006C4EA3 /* UIView+Utils.swift */; };
 		A40CB12BBA7C4CF7B439A802 /* Pods_DossierPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6886FE615A999F437B6337 /* Pods_DossierPlay.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +31,9 @@
 		7CE39F6520542C07006C4EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CE39F6B20544237006C4EA3 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchTypeAwareLongPressGestureRecognizer.swift; sourceTree = "<group>"; };
+		7CE39F6F20545B75006C4EA3 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		7CE39F7120546023006C4EA3 /* SquareModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareModel.swift; sourceTree = "<group>"; };
+		7CE39F7320546057006C4EA3 /* UIView+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Utils.swift"; sourceTree = "<group>"; };
 		BA6886FE615A999F437B6337 /* Pods_DossierPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DossierPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79C6A94C55334FA78987AAA /* Pods-DossierPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DossierPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +83,9 @@
 				7CE39F5920542C07006C4EA3 /* AppDelegate.swift */,
 				7CE39F6B20544237006C4EA3 /* GridView.swift */,
 				7CE39F5B20542C07006C4EA3 /* ViewController.swift */,
+				7CE39F7120546023006C4EA3 /* SquareModel.swift */,
+				7CE39F6F20545B75006C4EA3 /* PersistenceService.swift */,
+				7CE39F7320546057006C4EA3 /* UIView+Utils.swift */,
 				7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */,
 				7CE39F5D20542C07006C4EA3 /* Main.storyboard */,
 				7CE39F6020542C07006C4EA3 /* Assets.xcassets */,
@@ -225,9 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE39F7020545B75006C4EA3 /* PersistenceService.swift in Sources */,
 				7CE39F5C20542C07006C4EA3 /* ViewController.swift in Sources */,
+				7CE39F7420546057006C4EA3 /* UIView+Utils.swift in Sources */,
 				7CE39F6C20544237006C4EA3 /* GridView.swift in Sources */,
 				7CE39F6E20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift in Sources */,
+				7CE39F7220546023006C4EA3 /* SquareModel.swift in Sources */,
 				7CE39F5A20542C07006C4EA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jr.DossierPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -388,7 +400,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jr.DossierPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
