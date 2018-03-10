@@ -12,9 +12,13 @@
 		7CE39F5F20542C07006C4EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE39F5D20542C07006C4EA3 /* Main.storyboard */; };
 		7CE39F6120542C07006C4EA3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE39F6020542C07006C4EA3 /* Assets.xcassets */; };
 		7CE39F6420542C07006C4EA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE39F6220542C07006C4EA3 /* LaunchScreen.storyboard */; };
+		7CE39F6C20544237006C4EA3 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F6B20544237006C4EA3 /* GridView.swift */; };
+		7CE39F6E20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */; };
+		A40CB12BBA7C4CF7B439A802 /* Pods_DossierPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6886FE615A999F437B6337 /* Pods_DossierPlay.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7BD9ED5A116F25828C5CD6D7 /* Pods-DossierPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DossierPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		7CE39F5620542C07006C4EA3 /* DossierPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DossierPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE39F5920542C07006C4EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE39F5B20542C07006C4EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,10 @@
 		7CE39F6020542C07006C4EA3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CE39F6320542C07006C4EA3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CE39F6520542C07006C4EA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CE39F6B20544237006C4EA3 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
+		7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchTypeAwareLongPressGestureRecognizer.swift; sourceTree = "<group>"; };
+		BA6886FE615A999F437B6337 /* Pods_DossierPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DossierPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F79C6A94C55334FA78987AAA /* Pods-DossierPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DossierPlay.release.xcconfig"; path = "Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +37,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A40CB12BBA7C4CF7B439A802 /* Pods_DossierPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		01BE5957022E8980925DC884 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7BD9ED5A116F25828C5CD6D7 /* Pods-DossierPlay.debug.xcconfig */,
+				F79C6A94C55334FA78987AAA /* Pods-DossierPlay.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		7CE39F4D20542C07006C4EA3 = {
 			isa = PBXGroup;
 			children = (
 				7CE39F5820542C07006C4EA3 /* DossierPlay */,
 				7CE39F5720542C07006C4EA3 /* Products */,
+				01BE5957022E8980925DC884 /* Pods */,
+				E28EB4CCF9D837CBB7700CB8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +75,23 @@
 			isa = PBXGroup;
 			children = (
 				7CE39F5920542C07006C4EA3 /* AppDelegate.swift */,
+				7CE39F6B20544237006C4EA3 /* GridView.swift */,
 				7CE39F5B20542C07006C4EA3 /* ViewController.swift */,
+				7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */,
 				7CE39F5D20542C07006C4EA3 /* Main.storyboard */,
 				7CE39F6020542C07006C4EA3 /* Assets.xcassets */,
 				7CE39F6220542C07006C4EA3 /* LaunchScreen.storyboard */,
 				7CE39F6520542C07006C4EA3 /* Info.plist */,
 			);
 			path = DossierPlay;
+			sourceTree = "<group>";
+		};
+		E28EB4CCF9D837CBB7700CB8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA6886FE615A999F437B6337 /* Pods_DossierPlay.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7CE39F6820542C07006C4EA3 /* Build configuration list for PBXNativeTarget "DossierPlay" */;
 			buildPhases = (
+				B3521B3364ED56D59591168E /* [CP] Check Pods Manifest.lock */,
 				7CE39F5220542C07006C4EA3 /* Sources */,
 				7CE39F5320542C07006C4EA3 /* Frameworks */,
 				7CE39F5420542C07006C4EA3 /* Resources */,
+				BFB189FCAC1C296924D5845C /* [CP] Embed Pods Frameworks */,
+				2455310F0FD9C53BE152FB6A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,12 +164,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2455310F0FD9C53BE152FB6A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3521B3364ED56D59591168E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DossierPlay-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFB189FCAC1C296924D5845C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyDropbox/SwiftyDropbox.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyDropbox.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7CE39F5220542C07006C4EA3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7CE39F5C20542C07006C4EA3 /* ViewController.swift in Sources */,
+				7CE39F6C20544237006C4EA3 /* GridView.swift in Sources */,
+				7CE39F6E20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift in Sources */,
 				7CE39F5A20542C07006C4EA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +363,7 @@
 		};
 		7CE39F6920542C07006C4EA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BD9ED5A116F25828C5CD6D7 /* Pods-DossierPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +379,7 @@
 		};
 		7CE39F6A20542C07006C4EA3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79C6A94C55334FA78987AAA /* Pods-DossierPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
