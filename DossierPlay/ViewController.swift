@@ -138,6 +138,7 @@ class ViewController: UIViewController {
             let absoluteLocation = gesture.location(in: gridView)
             attachment?.anchorPoint = absoluteLocation
         case .ended, .cancelled:
+            self.disableCollisionDetection()
             animator?.removeAllBehaviors()
             UIView.animate(withDuration: 0.05, animations: {
                 squareModel.square.backgroundColor = squareModel.color
@@ -146,9 +147,8 @@ class ViewController: UIViewController {
                 }
             }, completion: { completed in
                 self.animator?.addBehavior(self.noRotationBehavior!)
-                self.animator?.addBehavior(self.attachment!)
                 if self.kineticsSwitch.isOn {
-                    self.animator?.addBehavior(self.collisionBehavior!)
+                    self.enableCollisionDetection()
                 }
             })
         default:
