@@ -17,17 +17,18 @@ public class SquareModel: NSObject {
 
     let colorKey = "color"
 
-    let squareSize = CGSize(width: 200, height: 200)
+    public static let squareSize = CGSize(width: 320, height: 320)
 
     var square: UIView
-    var pickupOrigin: CGPoint?
+    var pickupOffset: UIOffset?
     var color: UIColor
 
     public init(color: UIColor, location: CGPoint) {
-        let square = UIView(frame: CGRect(origin: location, size: squareSize))
+        let square = UIView(frame: CGRect(origin: location, size: SquareModel.squareSize))
         square.backgroundColor = color
-        square.layer.borderColor = UIColor.black.cgColor
-        square.layer.borderWidth = 2.0
+        square.layer.borderColor = color.darkerColor().cgColor
+        square.layer.borderWidth = 4.0
+        square.layer.cornerRadius = 20
         self.square = square
         self.color = color
     }

@@ -16,6 +16,11 @@ enum GridMode {
 
 class GridView: UIView {
 
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        backgroundColor = UIColor(hexString: "FAFAFF")
+    }
+
     public var gridMode: GridMode = .fixed(size: CGSize(width: 50.0, height: 50.0)) {
         didSet {
             setNeedsDisplay()
@@ -34,6 +39,8 @@ class GridView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
+        super.draw(rect)
+
         guard let context: CGContext = UIGraphicsGetCurrentContext() else {
             return
         }
@@ -57,7 +64,8 @@ class GridView: UIView {
 
         context.closePath()
         context.setLineWidth(1.0)
-        context.setStrokeColor(UIColor(red: 0, green: 0, blue: 1, alpha: 0.2).cgColor)
+        context.setStrokeColor(UIColor(white: 0, alpha: 0.4).cgColor)
+//        context.setStrokeColor(UIColor(hexString: "F2EBE6").cgColor)
         context.strokePath()
     }
 }

@@ -15,17 +15,21 @@ public extension UIView {
         guard let backgroundColor = backgroundColor else {
             return
         }
-        var red: CGFloat = 0.0
-        var green: CGFloat = 0.0
-        var blue: CGFloat = 0.0
-        var alpha: CGFloat = 0.0
-        backgroundColor.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
-        let newColor = UIColor(red: min(red + 0.4, 1.0),
-                               green: min(green + 0.4, 1.0),
-                               blue: min(blue + 0.4, 1.0),
-                               alpha: alpha)
-        self.backgroundColor = newColor
+        self.backgroundColor = backgroundColor.brighterColor()
     }
 
 }
 
+extension UIView {
+
+    @discardableResult   // 1
+    func fromNib<T : UIView>() -> T? {   // 2
+        guard let contentView = Bundle(for: type(of: self)).loadNibNamed(String(describing: type(of: self)), owner: self, options: nil)?.first as? T else {    // 3
+            // xib not loaded, or its top view is of the wrong type
+            return nil
+        }
+        self.addSubview(contentView)     // 4
+        contentView.translatesAutoresizingMaskIntoConstraints = false   // 5
+        return contentView   // 7
+    }
+}

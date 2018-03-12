@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3742D92056F9F3007C3D60 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3742D82056F9F3007C3D60 /* UIColor+Utils.swift */; };
+		7C3742DB2056FE4F007C3D60 /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3742DA2056FE4F007C3D60 /* ToolBar.swift */; };
 		7CE39F5A20542C07006C4EA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F5920542C07006C4EA3 /* AppDelegate.swift */; };
 		7CE39F5C20542C07006C4EA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE39F5B20542C07006C4EA3 /* ViewController.swift */; };
 		7CE39F5F20542C07006C4EA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CE39F5D20542C07006C4EA3 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		7BD9ED5A116F25828C5CD6D7 /* Pods-DossierPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DossierPlay.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DossierPlay/Pods-DossierPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		7C3742D82056F9F3007C3D60 /* UIColor+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		7C3742DA2056FE4F007C3D60 /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		7CE39F5620542C07006C4EA3 /* DossierPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DossierPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE39F5920542C07006C4EA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE39F5B20542C07006C4EA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,9 +87,11 @@
 				7CE39F5920542C07006C4EA3 /* AppDelegate.swift */,
 				7CE39F6B20544237006C4EA3 /* GridView.swift */,
 				7CE39F5B20542C07006C4EA3 /* ViewController.swift */,
+				7C3742DA2056FE4F007C3D60 /* ToolBar.swift */,
 				7CE39F7120546023006C4EA3 /* SquareModel.swift */,
 				7CE39F6F20545B75006C4EA3 /* PersistenceService.swift */,
 				7CE39F7320546057006C4EA3 /* UIView+Utils.swift */,
+				7C3742D82056F9F3007C3D60 /* UIColor+Utils.swift */,
 				7CE39F6D20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift */,
 				7CE39F5D20542C07006C4EA3 /* Main.storyboard */,
 				7CE39F6020542C07006C4EA3 /* Assets.xcassets */,
@@ -234,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C3742DB2056FE4F007C3D60 /* ToolBar.swift in Sources */,
 				7CE39F7020545B75006C4EA3 /* PersistenceService.swift in Sources */,
 				7CE39F5C20542C07006C4EA3 /* ViewController.swift in Sources */,
 				7CE39F7420546057006C4EA3 /* UIView+Utils.swift in Sources */,
@@ -241,6 +248,7 @@
 				7CE39F6E20544D40006C4EA3 /* TouchTypeAwareLongPressGestureRecognizer.swift in Sources */,
 				7CE39F7220546023006C4EA3 /* SquareModel.swift in Sources */,
 				7CE39F5A20542C07006C4EA3 /* AppDelegate.swift in Sources */,
+				7C3742D92056F9F3007C3D60 /* UIColor+Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

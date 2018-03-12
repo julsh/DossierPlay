@@ -33,7 +33,7 @@ public class PersistenceService {
         do {
             print(modelDicts)
            let jsonData = try JSONSerialization.data(withJSONObject: modelDicts, options: .prettyPrinted)
-            client.files.upload(path: "/squares.json", input: jsonData)
+            client.files.upload(path: "/squares.json", mode: .overwrite, input: jsonData)
                 .response { response, error in
                     if let response = response {
                         print(response)
@@ -44,9 +44,6 @@ public class PersistenceService {
                 .progress { progressData in
                     print(progressData)
             }
-            let jsonString = String(data: jsonData, encoding: String.Encoding.utf8)
-            print(jsonString)
-            print("json: \(jsonData)")
         } catch {
             print("error")
         }
