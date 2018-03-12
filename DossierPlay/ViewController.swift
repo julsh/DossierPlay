@@ -138,15 +138,19 @@ class ViewController: UIViewController {
             let absoluteLocation = gesture.location(in: gridView)
             attachment?.anchorPoint = absoluteLocation
         case .ended, .cancelled:
-            animator?.removeBehavior(self.attachment!)
-            animator?.updateItem(usingCurrentState: square)
-
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.4) {
+            animator?.removeAllBehaviors()
+            UIView.animate(withDuration: 0.05, animations: {
                 squareModel.square.backgroundColor = squareModel.color
                 if touchType != .stylus {
                     self.snapToGrid(square: square)
                 }
-            }
+            }, completion: { completed in
+                self.animator?.addBehavior(self.noRotationBehavior!)
+                self.animator?.addBehavior(self.attachment!)
+                if self.kineticsSwitch.isOn {
+                    self.animator?.addBehavior(self.collisionBehavior!)
+                }
+            })
         default:
             return
         }
@@ -160,13 +164,6 @@ class ViewController: UIViewController {
                                    y: rowIndex * gridView.gridSize.height)
         frame.origin = snapLocation
         square.frame = frame
-
-//        var proposedAnchorPoint = snapLocation
-//        if let offset = squareModels.first(where: { $0.square == square })?.pickupOffset {
-//            proposedAnchorPoint.x += offset.horizontal
-//            proposedAnchorPoint.y += offset.vertical
-//        }
-//        attachment?.anchorPoint = proposedAnchorPoint
     }
 
     func save() {
