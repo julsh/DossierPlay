@@ -64,8 +64,8 @@ class GridView: UIView {
 
         context.closePath()
         context.setLineWidth(1.0)
-        context.setStrokeColor(UIColor(white: 0, alpha: 0.4).cgColor)
-//        context.setStrokeColor(UIColor(hexString: "F2EBE6").cgColor)
+//        context.setStrokeColor(UIColor(white: 0, alpha: 0.4).cgColor)
+        context.setStrokeColor(UIColor(hexString: "F2EBE6").cgColor)
         context.strokePath()
     }
 }

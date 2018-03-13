@@ -146,6 +146,7 @@ class ViewController: UIViewController {
                     self.snapToGrid(square: square)
                 }
             }, completion: { completed in
+                self.save()
                 self.animator?.addBehavior(self.noRotationBehavior!)
                 if self.kineticsSwitch.isOn {
                     self.enableCollisionDetection()
